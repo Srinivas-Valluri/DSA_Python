@@ -1,0 +1,8 @@
+
+What is an array?
+-Collection of simillar items.
+-Stored in conegeous memory location.
+-Can be identified uniquely by id.
+
+
+-index starts from 0 and increases sequentially.
