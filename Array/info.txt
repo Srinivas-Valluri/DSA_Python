@@ -6,3 +6,11 @@ What is an array?
 
 
 -index starts from 0 and increases sequentially.
+
+
+To create array in python we use Array or NumPy Module.
+
+Array Module:
+-More efficient than list
+-Can only use primary data types.
+
