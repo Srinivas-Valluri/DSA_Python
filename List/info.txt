@@ -1,0 +1,4 @@
+List is an in-built data structure.
+List holds ordered collection of items.
+enclosed by []
+mutable
