@@ -1,0 +1,8 @@
+Immutable and any type can be stored.
+Ordered and accessed via index.
+Comparable and Hashable.
+Hashable: An object is hashable if its value remains same in its lifetime.
+
+t = 'a', 'b'
+OR 
+t = {'a', 'b'}

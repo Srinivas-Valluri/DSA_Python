@@ -1,32 +1,30 @@
-my_List = [1,2,3,4]
+def getWordsInLongestSubsequence(n: int, words, groups):
+    max_len = 1
+    start = [0]
+    temp_len = 1
+    
+    if n==1:
+        return words
 
-def traversal(arr, val):
-  for i, item in enumerate(arr):
-    if item==val:
-      print(item, i)
+    for i in range(len(groups)-1):
+      if groups[i]!=groups[i+1]:
+        temp_len+=1
+      else:
+        if temp_len>max_len:
+          max_len=temp_len
+          start.append(i-temp_len+1)
+        temp_len=1
 
-traversal(my_List, 2)
 
-a=[1,2,3,4]
-c= a
-c = c+[1]
-print(a,c)
+    if temp_len>max_len:
+          max_len=temp_len
+          start.append(len(groups)-temp_len)
+        
+    if max_len==1 and n==1:
+        return words[0:1]
+    if max_len==1:
+        return words[0:0]
+    
+    return words[start[-1]:start[-1]+max_len]
 
-a = a*3
-print(a)
-
-a = "spam"
-b = list(a)
-print(a,b)
-
-a = "spam spam spam"
-b = a.split(" ")
-print(a, b)
-
-new_b=" ".join(b)
-print(new_b)
-
-#list comprehension
-a = [1,2,3,4]
-new_a = [x*2 for x in a if x%2==0]
-print(a, new_a )
+print(getWordsInLongestSubsequence(2, ["d","a","v","b"], [1,0,0,1]))

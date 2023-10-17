@@ -1,0 +1,2 @@
+A dictionary is a collection which is unordered, changeable and indexed.
+Dictionary are ordered as of python 3.7
