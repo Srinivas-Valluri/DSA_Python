@@ -1,0 +1,2 @@
+In case of DLL we have reference to next and prev node.
+Reverse traversal is possible.
