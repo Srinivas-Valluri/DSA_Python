@@ -1,0 +1,12 @@
+Stack is a data structure that stores items in a Last-in/First-Out(LIFO) order.
+Stacks can be made from Python lists, Linked List etc..
+Example: Back button in browser.
+
+Stack Operation:
+Create Stack
+Push - Insert an element
+Pop - Remove an element
+Peek - Return top element.
+isEmpty - Returns True if stack is empty
+isFull - Returns True if stack is full
+deleteStack - Remove stack 

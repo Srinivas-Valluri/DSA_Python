@@ -1,0 +1,19 @@
+Queue is a data structure that stores items in a First-in/First-out manner. FIFO method.
+
+New addition happens at the end of the queue.
+First service is given to first element in the queue.
+
+Queue Operations:
+Create Queue
+Enqueue
+dequeue
+Peek
+isEmpty
+isFull
+deleteQueue
+
+Queue can be created using:
+-List
+  - Queue without capacity
+  - Queue with capacity(Circular Queue) 
+-LinkedList
