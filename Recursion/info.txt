@@ -1,0 +1,30 @@
+Recursion is a way of solving a problem by having a function calling itself.
+Solution depends on the smaller parts of the question.
+Generally most of the problems can also be solved by iteration.
+
+
+Properties of recursion function:
+- Performing the same operation multiple times with different inputs.
+- In every step we try smaller inputs to make the problem smaller.
+- Base condition is needed to stop the recursion.
+
+Recursion is used in many algorihtms like divide and conquer, greedy and dynamic programming.
+
+
+#Basic Syntax:
+
+def recursionMethod(params):
+  if baseCase:
+    return someValue
+  else:
+    recursionMethod(modified params) 
+
+
+#Recursion writing in 3 steps:
+
+- Find the recursive pattern - The flow
+- Base case - The stopping criteria
+- Unintentional Case - The constraint (useless cases or cases that break the code)
+
+#Time complexity
+Assume the recursive function has M(n) and solve the equation until you get rid of M on right-side.
