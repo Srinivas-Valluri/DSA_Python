@@ -1,0 +1,51 @@
+-Definition:
+A tree is a nonlinear data strcture with hierarchical relationships between its elements without having any cycle.
+It is basically reversed from a real life tree.
+
+-Properties:
+Represents hierarchical data
+Every node value and reference to sub-category
+
+-Why a Tree?
+Quicker access to data.
+hierarchical data like folder strcture, organisation strcture etc..
+There are many tree data structures which performs better in various situations. Binary Search Tree, AVL, Red Black Tree, Trie.
+
+-Tree Terminology:
+  -Root: top node without parent.
+  -Edge: link between parent and child.
+  -Leaf: a node which does not have children.
+  -Sibling: children of same parent.
+  -Ancestor: parent, grandparent... of a node.
+  -Depth of node: a length of the path from root to node.
+  -Height of node:a length of the path from the node to the deepest node.
+  -Depth of Tree: depth of root node = 0.
+  -Height of Tree: height of root node.
+
+-Binary Tree
+Each node has atmost two children.
+binary tree is a family of data strcture(BST, Heap tree, AVL, red black tree, Syntax tree)
+Huffman coding problem, heap priority problem and expression parsing problem can be solved efficiently using binary tree.
+
+-Types of Binary Tree:
+  -Full Binary Tree: 0 or 2 children
+  -Perfect Binary Tree: All non-leaf nodes have 2 children
+  -Complete Binary Tree: All levels are completely filled except the last one.
+  -Balanced Binary Tree: all leaf nodes are located at the same distance from the root.
+
+Binary Tree:
+  -Linked List: Node will have three components(data, right, left). 
+  -Pyhton List:
+    - Index 0 is left empty to make calculations easy.
+    - Root is kept at index 1.
+    - Left Child = cell[2*x] - x is index of root
+    - Right Child = cell[2*x+1] - x is index of root
+    - We need to know the number of nodes in the tree to create fixed size of List.
+
+Traversal of Binary Tree:
+- Depth first Search (Time: O(n), space: O(n))
+   - PreOrder - Root->left->right
+  - InOrder - left->Root->Right
+  - PostOrder - left->Right->Root
+- Breadth first Search
+  - Level Order Traversal 
