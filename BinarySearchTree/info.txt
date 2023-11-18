@@ -1,0 +1,16 @@
+BST Properties:
+- In the left subtree the value of a node is less than or equal to its parent nodes value.
+- In the right subtree the values of a node is greater than its parent nodes value.
+
+Why BST?
+- A BST doesn't store the index of data elements instead it relais on implicit structure to perform faster insertion and deletinon.
+
+-Creation
+-insertion
+-deletinon of node 
+  - Delete a Node with 2 child: Replace the node with lowest value present in right sub tree.
+  - Delete a Node with 1 child: delete the node and join the rest subtree with tree.
+  - Delete a node with 0 child: just delete.
+-search
+-Traverse
+-deletion of tree

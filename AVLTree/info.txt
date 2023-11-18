@@ -1,0 +1,50 @@
+definition:
+- An AVL tree is a self-balancing BST where the difference between heights of left and right
+subtree cannot be more than one for all nodes.
+
+-If height difference is more than one, then rebalancing is done to restore the AVL property, this process is called rotation.
+
+Why we need AVL Tree?
+-Normal BST is not height optimized. AVL Tree is optimized for insert, search by maintaining its height property.
+-Time Complexity of BST can go upto O(N) but AVL Tree is only O(logN)
+
+Common operations on AVL Tree:
+-Creation
+-search - Time-O(logN) Space-O(logN)
+-Traverse - preOrder, inOrder, postOrder, levelOrder - Time-O(n) Space-O(n)
+-insert
+-Delete a node
+-Delete Tree
+
+Insertion into AVL Tree:
+  -Case-1: Rotation is not required(Tree is balanced w.r.t AVL property) - When rotation is not required insertion is same as BST
+  -Case-2: Rotation is required(When tree is not balanced w.r.t AVL property after insertion), Here we have 4 cases:
+    -LL(Left Left condition) - The node that causes disbalance has left child and left grandchild. - Right Rotation is required.
+    (If there are two grandchildren then select the path with has more height)
+    Time-O(1) Space-O(1)
+      Algorithm
+      step1: rotate right disbalancedNode
+    -LR(Left Right condition) - First we have to do left rotation of "disbalanced node's left child" then, right rotation of "disbalanced node"
+      Algorithm
+      step1: rotate left disbalancedNode.leftChile
+      step2: rotate right disbalancedNode
+    -RR(Right Right condition)
+      Algorithm
+      step-1: rotate left disbalancedNode
+    -RL(Right Left condition)
+      Algorithm
+      step1: rotate right disbalancedNode.rightChile
+      step2: rotate left disbalancedNode
+
+Deletion:
+Case-1: Rotation is Not required. Has 3 cases
+  -Node to be deleted is
+    - Leaf Node: We just delete
+    - One Child: We delete the node and assign the child node to its parent
+    - Two Child: We update the minimum not in right subtree with the deleted node
+Case-2: Rotation is required. when we delete a node we will check that the node is getting disbalanced. 4 cases
+  - LL
+  - LR
+  - RR
+  - RL
+

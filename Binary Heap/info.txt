@@ -1,0 +1,28 @@
+A Binary Heap is a binary tree with following properties:
+-A BH can atmost have 2 child
+-A BH is either Min BH or Max BH.
+-In a Min BH, the key at root must be minimum among all keys present in BH. The same property must be true recursively for all nodes in Binary Tree.
+-It is a complete tree(Last level all keys as left as possible). So it becomes ideal for array implementation.
+
+Why we need Binary Heap?
+-Find the minimum or maximum number among a set of numbers in LogN time.
+-Insert in logN time.
+
+Common Operation:
+-Creation
+-Peek top - Return first element or arr[1]
+-Extract min/maximum
+-Traversal - preOrder, inOrder, postOrder, levelOrder (In BH we extensively use only levelOrder Traversal)
+-Size of BH
+-Insert - Insert at the last level and call heapify(heapifyTreeInsert).
+-Extract - We are only allowed to extract the root(minimum value) of BH. We swap least node with root and delete least value. Then do heapify(heapifyTreeExtract).
+-Delete
+
+implementation options:
+-array
+-Reference/pointer
+
+Uses:
+-Prim's Algorithm
+-Heap Sort
+-Priority Queue

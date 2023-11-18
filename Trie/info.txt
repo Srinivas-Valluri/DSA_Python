@@ -1,0 +1,19 @@
+A Trie is a tree-based data structure that organizes information in a hierarchy. Mostly used on strings.
+Enable fast look-up's of strings. Very efficient for prefix matching in english language.
+It can have any number of children. In a node we can store any number of non-repetative characters.
+
+Properties:
+-It is typically used to store or search strings in a space and time efficient way.
+-Any node in trie can store non repetative multiple characters.
+-Every node stores link of the next character of the string.
+-Every node keeps track of 'end of string'.
+
+Commom Operations:
+-Creation
+-Insertion
+-Deletion
+-Searching 
+
+uses:
+spelling checker
+Auto completion
