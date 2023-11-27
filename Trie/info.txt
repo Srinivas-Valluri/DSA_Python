@@ -8,12 +8,34 @@ Properties:
 -Every node stores link of the next character of the string.
 -Every node keeps track of 'end of string'.
 
-Commom Operations:
--Creation
--Insertion
--Deletion
--Searching 
 
-uses:
+Node structure:-
+---------------------------------
+            Map
+---------------------------------
+characters  |  Link to trie Node
+---------------------------------
+            |
+            |
+            |
+---------------------------------
+      End of String: Y/N
+---------------------------------
+
+
+Commom Operations:
+-Creation  
+-Insertion (4-cases)
+  -Blank Trie
+  -New string's prefix is common to another string prefix
+  -New strings prefix is already present as complete string
+  -String present is already present in trie
+-Searching (3-cases)
+  -String doesn't exist
+  -String exist
+  -Prefix of string exist
+-Deletion - Always happens from leaf node (4-cases)
+
+uses: 
 spelling checker
 Auto completion

@@ -1,0 +1,8 @@
+Searching: We will look up our data to find a requested element is present or not.
+
+Linear Search: #Time-O(N) Space-O(1)
+  -Items are searched one-by-one. Items can be sorted or not.
+  -It is also called sequential search.
+Binary Search:
+  -It only works with sorted array.
+  -Half of the elements can be eliminated at a time, instead of eliminating them one by one.

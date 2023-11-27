@@ -1,28 +1,26 @@
-def merge(intervals):
-    def helper(item):
-            return item[0], item[1]
-    intervals.sort(key=helper)
-    #print(intervals)
-    
-    ans, n = [], len(intervals)
-    temp = 0
-    start = intervals[0][0]
-    end = intervals[0][1]
-    for i in range(n-1):
-        # print(start, end)
-        if end>=intervals[i+1][0]:
-            if end>intervals[i+1][1]:
-                continue
-            end = intervals[i+1][1]
-            continue
-        else:
-            ans.append([start, end])
-            start = intervals[i+1][0]
-            end = intervals[i+1][1]
-    ans.append([start, end])
-    
+
+def largestSubmatrix(matrix) -> int:
+    m = len(matrix)
+    n = len(matrix[0])
+    ans = 0
+    for i in range(1,m):
+        for j in range(n):
+            if matrix[i-1][j]>0 and matrix[i][j]!=0:
+                matrix[i][j] = matrix[i-1][j]+1
+    print(matrix)
+    for i in range(m):
+        currRow = matrix[i][:]
+        currRow.sort(reverse=True)
+        base = 1
+        currAns = 0
+        for j in range(n):
+            if currRow[j]==0:
+                break
+            currAns = currRow[j]*base
+            ans = max(currAns, ans)
+            base+=1
 
     return ans
 
-print(merge([[2,3],[4,5],[6,7],[8,9],[1,10]]))
-        
+print(largestSubmatrix([[0,0,1],[1,1,1],[1,0,1]]))
+

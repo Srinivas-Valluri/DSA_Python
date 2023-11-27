@@ -1,0 +1,117 @@
+What is graph? Why do we need it?
+  - It is a non-linear DS which consists of Nodes(or vertices) and a set of Edges which connect a pair of nodes. Graphs can contain cycle.
+  - Graphs are used to represent networks.
+
+Graph Terminology:
+  -vertices(vertex): Vertices are the nodes of the graph.
+  -Edge: The edge is the line that connects pair of vertices
+  -Unweighted graph: A graph which does not have a weight associated with any edge.
+  -Weighted graph: A graph which has a weight associated with any edge.
+  -Undirected graph: Edge of graph do not have a direction associated with them.
+  -Directed graph: Direction is associated with edge. (direction can be two way also)
+  -Cyclic graph: A graph which has atleast one loop.
+  -Acyclic graph: A graph with no loop.
+  -Tree: it is a special case of directed acyclic graphs. (BRUH!!!)
+
+Types of graphs(6 types):
+  -Directed:
+    -Weighted:
+      -Positive: edge associated with direction and positive weight
+      -Negative: edge associated with direction and weight. Atleast one weight is negative.
+    -Unweighted: No weight but has direction
+  -Undirected:
+    -Weighted:
+      -Positive: edge associated with no direction and positive weight
+      -Negative: edge associated with no direction and weight. Atleast one weight is negative.
+    -Unweighted: No weight and No direction
+
+Graph Representation:
+  -Adjacency Matrix: An adjacency matrix is a square matrix or you can say it is a 2D array. And the elements of the matrix indicate weather pair of vertices
+  are adjacent or not in the graph.
+    - Implementation: 
+        - 2D array
+
+  -Adjacency List: An adjacency list is a collection of unordered list used to represent graph.
+  Each list describes the set of neighbors of a vertex in the graph. 
+    - Implementation: 
+      - Vertices are stored in the array and adjacenct nodes are stored in Linked List.
+      - Dictionary with key as nodes and adjacenct nodes in values.
+
+  NOTE:
+  - If a graph is complete or almost complete we should use Adjacency Matrix. (Space efficient)
+  - If the number of edges are few then we should use Adjacency List. (Time efficient)
+
+Traversal of graphs (BFS, DFS): The process of traversing each node.
+  -BFS(Breadth First Search): We start with arbitary node and explore neighbors before going to next level. We use Queue.
+    Time-O(V+E) Space-O(V+E)
+    When to use: If we know that the target is close to the starting point.
+  -DFS(Depth First Search): We choose an arbitary node and go as deep as possible along each edge before backtracking. We use Stack.
+    Time-O(V+E) Space-O(V+E)
+    When to use: If we know that the target is buried very deep.
+
+
+Topological Sorting: Sorts given actions in such a way that if there is a dependency of one action on another,
+then the dependent action is always comes later than its parent action.
+  -There can be many solutions. Our solution depends on where we start also.
+  -We need a stack data structure.
+  --Topological Sort Algorithm: Time-O(V+E) Space-O(V+E)
+    if a vertex depends on currentVertex:
+      Go to the vertex and
+      then come back to currentVertex
+    else:
+      push currentVertex to stack
+
+
+Single source shortest path (BFS, Dijkstra and Bellman Ford): We can solve this problem by 3 methods as mentioned.
+  -Definition: A single source problem is about finding a path between a given vertex(called source) to all other vertices in a graph such that the total
+    distance between them(source and destination) is minimum.
+
+  --BFS for SSSP: This method only works for unweighted graph. 
+    -Algorithm:- (389video, 5:42Time) (Definitatly dry run bfs) (Time-O(E) Space-O(E) since E>>V in this case)
+    enqueue any starting vertex
+    while queue is not empty
+      p = dequeue()
+      if p is unvisited:
+        mark it visited
+        enqueue all adjacenct unvisited vertices of p
+        update parent of adjacenct vertices to currentVertex
+
+  --Dijkstra's Algorithm for SSSP:
+    -Each edge has weight. We will assume all nodes with inf value and starting node with 0 value.
+    -If cost of moving to that node is less than node value then it is updated to minimum.
+    -We use heap data structure.
+    --Algorithm: 
+      We start algo at start vertex and push neighbours to heap
+      Run loop until heap is empty:
+        if distance of destination vertex>(distance of source vertex+weight between source and destination vertex):
+          update distance of destination vertex to (distance of source vertex+weight between and destination vertex)
+    -This algorithm doesn't work with graphs having negative cycle. Negative cycle means total weight of cycle is negative. For this we have Bellman Ford algo.
+
+  --Bellman Ford for SSSP: we can solve negative cycle graph with this algo. we can solve all kind of graph with this.
+    -Bellman Ford algorithm is used to find single source shortest path problem. If there is a negative cycle it catches and report its existence.
+    -We can only report the negative cycle but we can't find the shortest path.
+    -This algorithm is simillar to Dijkstra's 
+    --Algorithm:(we have to do (V-1) iterations of all edges. Just the start edge is assigned 0 but we can start our iterations from anywhere)
+      if distance of destination vertex>(distance of source vertex+weight between source and destination vertex):
+        update distance of destination vertex to (distance of source vertex+weight between and destination vertex)
+    --IF IN V-TH ITERATION THE SHORTAST DISTANCE CHANGE THEN WE HAVE NEGATIVE CYCLE.
+    --Why Bellman Ford algorithm run's V-1 time?
+      -It tries to see a better distance appered in an iteration and use them in next iterations.
+      -In worst case we should travel (v-1) edges to reach a node so, we do (v-1) iterations.
+
+
+All pairs shortest path (BFS, Dijkstra, Bellman Ford and Floyd Warshall algorithms):
+  -Definition: It is about finding a path between every vertex to all other vertices in a graph such that the total distance between them is minimum.
+  --Algorithm:
+    -Calculate SSSP by taking each vertex.
+  --Floyd Warshall Algorithm: This is used for All Pair Shortest Problem.
+    -We will do V-iteration basically to see for optimization to find via vertices.
+    -Built an initial adjacency matrix(2-D) consists of connection's weight, "0" for same node to node and INF for no direct connection.
+      if D[u][v]>D[u][viaX] + D[viaX][v]:      #D-> Distance, u-> Source, v->destination, viaX-> via node X
+        D[u][v] = D[u][viaX]+D[viaX][v]
+    -Floyd Warshall algorithm can never identify negative cycle. So it can't report negative cycle.
+    -To identify negative cycle we should visit the negative cycle node twice which will not happen in this algo. (Analize!!)
+    
+
+
+Minimum Spanning Tree (Kruskal and Prim algorithm) 

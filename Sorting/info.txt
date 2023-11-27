@@ -1,0 +1,82 @@
+Sorting: Arranging data in a particular format(ASCE or DES).
+
+Types of Sorting:
+  -Space Used:
+    -In place: Sorting algorithm which does not require any extra space for sorting. (Bubble Sort)
+    -Out of place: We need extra space for sorting. (Merge Sort)
+  -Stability:
+    -Stable: If a sorting algorithm after sorting the contents does not change the sequence of similar content in which they appear. (Insertion Sort)
+    -Unstable: If a sorting algorithm after sorting the contents does change the sequence of similar content in which they appear. (Quick Sort)
+
+Sorting Terminology:
+  - Increasing Order: If successive element is greater than the previous one.
+    1,3,4,5,9
+  - Decreasing Order: If successive element is less than the previous one.
+    11,9,5,2
+  - Non-Increasing Order: If successive element is less than or equal to its previous one.
+    11,9,9,5,2
+  - Non-Decreasing Order: If successive element is greater than or equal to its previous one.
+    1,3,5,7,7,9,11
+
+Bubble Sort:
+  -Also called Sinking Sort.
+  -We repeatedly compare each pair of adjacent items and swap them if they are in the wrong order.
+  -In one iteration the largest element reaches right-most so it is sorted. Simillarly we do 2nd iteration upto n-1 items and so on....
+  When to use Bubble Sort:
+    -When the input is already sorted.
+    -Space is a concern
+    -Easy to implement
+  When to avoid Bubble Sort:
+    -Average Time complexity is poor
+
+Selection Sort:
+  -We repeatedly find the minimum element and move it to the sorted part of array to make unsorted part sorted.
+  Pro's:
+    -Performs well for small list
+  Con's:
+    -Poor average Time
+
+Insertion Sort:
+  -Divide the given array into two parts
+  -Take first element from unsorted array and find its correct position in sorted array.
+  -Repeat until unsorted array is empty.
+  Pro's:
+    -When we have insufficient memory
+    -Easy to implement
+    -When we have continious inflow of numbers and we want to keep them sorted
+  Con's:
+    -Time complexity is poor
+
+Bucket Sort:
+  -Create buckets and distribute elements of array into buckets
+  -Sort buckets individually.
+  -Merge buckets after sorting. 
+  -Number of buckets is round(Sqrt(number of elements))
+  -To select appropriate bucket for a number: ceil(Value*number of Buckets / maxValue).
+  -don't need to sort buckets. They will be already sorted because of above two points. Just merge them.
+  Pro's:
+    -When input is uniformly distributed over range
+  Con's:
+    -Space complexity is poor
+
+Merge Sort:
+  -Merge sort is a divide and conquer algorithm.
+  -Divide the input array in two halves and we keep halving recursively until they become too small that cannot be broken further.
+  -Merge halves by sorting them
+  Pro's:
+    -When you need stable sort
+    -When average expected time is O(N*LogN)
+  Con's:
+    -Space complexity is poor
+
+
+Quick Sort:
+  -Choose a pivot number. We put all numbers greater than pivot on right and all number lesser on left.
+  -After one iteration swap pivot number with maximum number lesser than pivot number and solve to 2 divisions simillarly.
+  -Pivot function will take care of above two steps.
+   
+
+Heap Sort:
+  -Insert data to Binary Heap Tree
+  -Extract data from Binary Heap
+  -It is best suited with array, it does not work with linkedList.

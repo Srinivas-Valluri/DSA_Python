@@ -1,0 +1,27 @@
+defenition:
+  -It is a method of sorting and indexing data. The idea behind hashing is to allow large amounts of
+data to be indexed using keys commonly created by formulas
+
+Hash Terminology:
+  -Hash Functions:
+    -it is a function that can be used to map of arbitrary size to data of fixed size.
+    -Hash functions must have less Collision.
+    -It distributes hash values uniformly across hash table.
+    -It has to use all input data.
+  -Key: Input data given by user.
+  -Hash value: A value that is returned by hash function
+  -Hash Table: It is a data structure which implements an associative array abstract data type, a structure that can map keys to values.
+    - If the hash table is full, we create 2X size of current hash table and recall hashing for current keys.
+  -Collision: when two keys produce same hash value. (2 ways)
+    -Direct Chaining: Implements the buckets as linked list. Colliding elements are stored in the lists.
+    -Open Addressing(3-ways): Stored in other vacant buckets. During storage and lookup these are found through so called probing.
+      -Linear Probing: it places new key into closest following empty call.
+      -Quadratic Probing: adding arbitary polynomial to the index until an empty cell is found.
+      -Double Hashing: Interval between probes is computed by another hash function.
+
+
+Practical Use Cases
+  -For fast search/insert/delete operation (O(1) OR O(N))
+  -Hashing passwords.
+  -File path is maped to physical location on disk
+  

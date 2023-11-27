@@ -1,0 +1,39 @@
+Minimum Spanning Tree:
+  - It is a subset of the edges of connected, weighted and undirected graph which:
+    - Connects all vertices together
+    - No Cycle
+    - Minimum total edges
+
+Disjoint Set (OR Union-Find):
+  - It is a data structure that keeps track of set of elements which are partitioned into number of disjoint and non overlaping sets and each sets
+    have representative which helps in identifying that sets.
+  - There are three standard disjoint operations:
+    -Make Set(N): Used to create initial set. We will create N number of sets for N number of elements. It is One-time job.
+    -Union Set(x,y): Merge two given set.
+    -Find Set(x): return the set name in which this element is there.
+    
+Kruskal's Algorithm:
+  -It is a greedy algorithm.
+  -It finds a Minimum Spanning Tree for weighted undirected graph in two steps:
+    --algorithm Time-O(V+ElogE+EV) or O(ElogE) Space-O(V+E)
+          -Add increasing cost edges at each step (Greedy)
+          -Avoid any cycle at each step
+    --Sudo Code:
+      Kruskal(G):
+      for each vertex:
+        makeSet(v)
+      sort each edge in non decreasing order by weight
+      for each edge (u, v):
+        if findSet(u)!=findSet(v):
+          union(u,v)
+          cost=cost+edge(u,v)
+
+
+Prims Algorithm:
+  -It is a greedy algorithm. Take a smaller part of graph and expand.
+  -It finds a Minimum Spanning Tree for weighted undirected graph in four steps:
+    --algorithm Time-O(V^3)(can be optimized to O(ElogV)) Space-O(V)
+      -Take any vertex as a source set its weight to 0 and all other vertices weights to infinity.
+      -For every adjacent vertices if the current weight is more than current edge we set it to current edge.
+      -THen we mark current vertex as visited
+      -Repeat these steps for all vertices in increasing order of weight.( Note weight of vertex) 
