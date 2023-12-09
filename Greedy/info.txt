@@ -1,0 +1,21 @@
+Greedy Algorithm:
+  -In each step we will select the best possible value at that time.
+  -We select the best solution at that time and freeze it and never come back to it again.
+  -It is an algorithmic paradigm that builds the solution piece by piece.
+  -Greedy can always not give optimal solution.
+    Ex:-(Failure of Greedy)
+      denominations = [1,3,4]. Return minimum number of coins for amount 6.
+      Greedy: 4,1,1
+      dp: 3,3
+
+Application:
+Insertion Sort
+Selection Sort
+Topological Sort
+Prim's Algorithm
+Kruskal Algorithm
+Dijkstra's Algorithm
+
+Activity Selection Problem
+Coin change Problem
+Fractional Knapsack Problem

@@ -1,0 +1,38 @@
+Dynamic Programming:
+  -It is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that
+  the optimal solution to the overall problem depends upon the optimal solution to its subproblems.
+  -Dynamic Programming is optimization of divide and conquer algorithm.
+
+Properties of DP:
+  -Optimal Substructure(Same as Divide and conquere)
+  -Overlapping Subproblems:
+    -Subproblems are smaller versions of the original problem. It is overlaping subproblem if finding its solution involves solving the same subproblem multiple times.
+
+Top Down with Memoization:
+  -Solve the bigger problem by recursively finding the solution to smaller subproblems. Whenever we solve a sub-problem, we cache its result so that we don't
+  end up solving it recursively again. This technique of storing results of subproblem is called Memoization.
+  -We start at the top and go down by dividing into subproblems and cache the results.
+  
+Bottom Up with Tabulation:
+  -Tabulation is the opposite of the top-down approach and avoids recursion. In this approach, we solve the problem "bottom-up"(i.e, by solving all the related subproblems first).
+  -This is done by filling up a table, the solution to the top/original problem is then computed.
+
+Top Down vs Bottom Up:
+ -Top Down:
+  -Easy to come up with solution.
+  -slow.
+  -Unnecessary use of stack space.
+  -Used when we need a quick solution.
+ -Bottom Up:
+  -Difficult to come up with solution.
+  -Fast
+  -No stack is Used
+  -Used when we need an efficient solution.
+
+Merge sort is divide and conquer but not DP. It has Optimal substructure but no overlapping subproblems!
+
+Steps to convert divide and conquer algo to dp(Top Down):
+ -Check for overlaping subproblems.
+ -Pass dp dict, use dp[N] if exists, calculate dp[N] if doesn't exist, return dp[N](ANS).
+
+ 
