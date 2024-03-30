@@ -45,7 +45,7 @@ Binary Tree:
 Traversal of Binary Tree:
 - Depth first Search (Time: O(n), space: O(n))
    - PreOrder - Root->left->right
-  - InOrder - left->Root->Right
-  - PostOrder - left->Right->Root
+   - InOrder - left->Root->Right
+   - PostOrder - left->Right->Root
 - Breadth first Search
   - Level Order Traversal 

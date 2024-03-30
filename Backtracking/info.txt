@@ -1,10 +1,10 @@
-Backtracking:
+Backtracking(follows DFS):
   -It is an algorithm that consider all the cases by brute-force for finding the desired output.
   -Recursion Intensive.
   -It is much better than brute-force because it can eliminate few candidates.
   -Brute Force:
     -Backtracking: Used to check all solutions.
-    -Dynamic Programming: Used to find best solution.
+    -Dynamic Programming: Used to find best solution(Optimization Problem).
 
   -Three types of problems in Backtracking:
     -Decision Problem - Search for a feasible solution.
@@ -17,3 +17,7 @@ Backtracking:
     -Checks weather the node is valid or not.
     -Discard several invalid solutions with one iteration. This we will do by Bounding Function.
     -Enumerate all subtree of the node to find the valid solution.  
+
+
+Branch and Bound(follows BFS):
+  - This is also brute force but the tree generated is level wise.

@@ -28,3 +28,39 @@ def recursionMethod(params):
 
 #Time complexity
 Assume the recursive function has M(n) and solve the equation until you get rid of M on right-side.
+
+-----------------Important-------------------
+
+Thinking Methodology:
+  - Write the simplest possible inputs
+  - Play around with examples and visualize
+  - Relate hard cases to simpler cases
+  - Generalize the pattern 
+  - Write code by combining recursive pattern with the base case.
+
+The Recursive leap of Faith: Assuming simpler cases work out.
+
+Recurrence Relation: (Abdu; Bari YT)
+  - let T(n) be the total time taken by algo.
+  - Example recurrence relation of simple recursion algorithm is T(n) = T(n-1)+1
+    - Lets solve this:
+    - T(n) = (T(n-2)+1)+1
+    - T(n) = ((T(n-3)+1)+1)+1....
+    - T(n-k) = T(n-k)+k...
+    - T(n) = n
+  - Example: T(n) = T(n-1) + n
+    - Lets solve this:
+    - T(n) = (T(n-2)+n-1)+n = T(n-2)+2n  (Tip: avoid adding terms. see the sequence.)
+    - T(k) = T(n-k)+kn...
+    - T(n) = 1+n*n
+    - T(n) = n*n
+  - Example: T(n) = T(n-1) + logn
+    - Lets solve this:
+    - T(n) = [T(n-2)+log(n-1)] + logn 
+    - T(n) = 1+log(2)+...+log(n-1)+log(n) = log(n!) = O(nlogn) (Upper bound)
+    - T(n) = O(nLog(n))
+  - Example: T(n) = 2*T(n-1) + 1
+    - Lets solve this:
+    - T(n) = 2*[2*T(n-2)+1]+1
+    - T(n) = 2^n + 2^(n-1) + 2^(n-2) + .... +2+1
+    - T(n) = O(2^n)
